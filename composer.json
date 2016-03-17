@@ -13,12 +13,10 @@
         "php": ">=5.3.0"
     },
     "autoload": {
-        "psr-4": {
-            "files": [ "src/function.php" ],
-            "Jewei\\DumpDump\\": "src/"
-        },
+        "files": [ "src/function.php" ],
+        "psr-4": { "Jewei\\DumpDump\\": "src/" },
         "exclude-from-classmap": [
-            "tests/"
+            "/tests/"
         ]
     }
 }
