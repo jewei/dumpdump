@@ -1,11 +1,35 @@
 # dumpdump
 PHP var dump to file.
 
+## Installation
+
+#### Install globally via Composer.
+```
+composer global require jewei/dumpdump
+```
+
+Add to PHP.ini so PHP can autoload.
+```
+auto_prepend_file = ~/.composer/vendor/autoload.php
+```
+
+#### Use the Git repository.
+
+Git clone this repository and `require '/path/to/src/Dump.php';`.
+
 ## Usage
 
 ```
-require 'dumpdump.php';
-dumpdump('hello', 'string output');
+<?php
+// /path/to/your/file.php
+
+// If did not install globally, still can use it locally.
+require __DIR__ . '/vendor/autoload.php';
+
+// Var dump like a boss.
+Dump::dump('hello', 'string output');
+
+// Dump using function.
 dumpdump(array('a','b'), 'vardump an array');
 ```
 
@@ -14,14 +38,14 @@ Generated output:
 ```
 [string output]
 Thu, 17 Mar 2016 17:53:16 +0800
-/var/www/projects/dumpdump/console dumpdump:8
+/path/to/your/file.php dumpdump:8
 --------------------------------------------------------------------------------
 string(5) "hello"
 --------------------------------------------------------------------------------
 
 [vardump an array]
 Thu, 17 Mar 2016 17:53:16 +0800
-/var/www/projects/dumpdump/console dumpdump:9
+/path/to/your/file.php dumpdump:11
 --------------------------------------------------------------------------------
 array(2) {
   [0]=>
