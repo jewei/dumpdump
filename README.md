@@ -1,5 +1,19 @@
 # dumpdump
+
 PHP var dump to file.
+
+Sometimes you cannot `echo'<pre>';var_dump($var);die;` to send debug info to the
+browser window. Especially during AJAX request or cron run. In such cases, you
+can send the debug info to a separate channel, plain file. Imagine now you can
+use console to `tail -f debug.txt`.
+
+This is not a full-fledge debugger. If you're looking for one, you may want to
+check these out:
+
+* xdebug
+* firephp
+* [kint](http://raveren.github.io/kint/)
+* [tracy](https://tracy.nette.org/)
 
 ## Installation
 
@@ -22,9 +36,6 @@ Git clone this repository and `require '/path/to/src/Dump.php';`.
 ```
 <?php
 // /path/to/your/file.php
-
-// If did not install globally, still can use it locally.
-require __DIR__ . '/vendor/autoload.php';
 
 // Var dump like a boss.
 Dump::dump('hello', 'string output');
