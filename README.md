@@ -22,9 +22,9 @@ check these out:
 composer global require jewei/dumpdump
 ```
 
-Add to PHP.ini so PHP can autoload.
+Add to php.ini so PHP can autoload.
 ```
-auto_prepend_file = ~/.composer/vendor/autoload.php
+auto_prepend_file = ${HOME}/.composer/vendor/autoload.php
 ```
 
 #### Use the Git repository.
