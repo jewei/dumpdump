@@ -2,6 +2,9 @@
 
 /**
  * Var dump to file.
+ *
+ * @param $var The variable to var_dump.
+ * @param $id  Identifier.
  */
 function dumpdump($var, $id = null)
 {
