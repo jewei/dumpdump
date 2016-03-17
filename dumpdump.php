@@ -3,11 +3,17 @@
 /**
  * Var dump to file.
  */
-function dumpdump($var, $name = NULL) {
+function dumpdump($var, $id = null)
+{
+    $datetime = new DateTime();
+    $backtrace = debug_backtrace();
     ob_start();
-    echo $name ? sprintf("[%s]\r", (string) $name) : '';
-    echo str_repeat('-', 80) . "\r";
+    print "\r";
+    print $id ? sprintf("[%s]\r", (string) $id) : '';
+    print $datetime->format('r') . "\r";
+    print sprintf('%s %s:%s', $backtrace[0]['file'], $backtrace[0]['function'], $backtrace[0]['line']) . "\r";
+    print str_repeat('-', 80) . "\r";
     var_dump($var);
-    echo str_repeat('-', 80) . "\r\r\r";
-    file_put_contents('dump.txt', strip_tags(html_entity_decode(ob_get_clean())), FILE_APPEND);
+    print str_repeat('-', 80) . "\r";
+    file_put_contents('debug.txt', strip_tags(html_entity_decode(ob_get_clean())), FILE_APPEND);
 }
