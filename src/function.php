@@ -6,10 +6,9 @@ if (!function_exists('dumpdump')) {
     /**
      * Var dump like a boss with functional programming.
      */
-    function dumpdump($var)
+    function dumpdump($var, $id = null)
     {
-        foreach (func_get_args() as $var) {
-            Dump::dump($var);
-        }
+        Dump::setBacktrace(debug_backtrace());
+        Dump::dump($var, $id);
     }
 }
